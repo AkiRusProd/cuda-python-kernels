@@ -17,8 +17,7 @@ __global__ void matAdd(float *A, float *B, float *C, int rowsNum, int colsNum)
 
 DLLEXPORT void cudaMatAdd(float *mat1, float *mat2, float *mat3, int rowsNum, int colsNum)
 {   
-
-  	float *p_mat1, *p_mat2, *p_mat3;
+	float *p_mat1, *p_mat2, *p_mat3;
 	
 
 	//// device memory allocation
@@ -43,11 +42,11 @@ DLLEXPORT void cudaMatAdd(float *mat1, float *mat2, float *mat3, int rowsNum, in
 	dim3 blockDim(bPG, bPG);
 
 	// int BLOCK_SIZE = 512;
-    // dim3 gridDim(ceil((float)rowsNum / BLOCK_SIZE), ceil((float)colsNum / BLOCK_SIZE));
+	// dim3 gridDim(ceil((float)rowsNum / BLOCK_SIZE), ceil((float)colsNum / BLOCK_SIZE));
 	// dim3 blockDim(BLOCK_SIZE, BLOCK_SIZE);
 
 	// dim3 blockDim(BLOCK_SIZE, BLOCK_SIZE);
- 	// dim3 gridDim((int)ceil(int((rowsNum + colsNum)/2)/blockDim.x),(int)ceil(int((rowsNum + colsNum)/2)/blockDim.y));
+	// dim3 gridDim((int)ceil(int((rowsNum + colsNum)/2)/blockDim.x),(int)ceil(int((rowsNum + colsNum)/2)/blockDim.y));
 
     matAdd<<<gridDim, blockDim>>>(p_mat1, p_mat2, p_mat3, rowsNum, colsNum); 
 

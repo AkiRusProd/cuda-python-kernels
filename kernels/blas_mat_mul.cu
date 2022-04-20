@@ -25,7 +25,7 @@ void blasMatMul(const float *A, const float *B, float *C, const int rowsNum, con
 
 DLLEXPORT void cudaMatMul (float *mat1, float *mat2, float *mat3, int mat1RowsNum, int mat1ColsNum, int mat2RowsNum, int mat2ColsNum)
 {   
-  	float *p_mat1, *p_mat2, *p_mat3;
+    float *p_mat1, *p_mat2, *p_mat3;
 
     //// device memory allocation
     cudaMalloc((void**)&p_mat1, mat1RowsNum * mat1ColsNum * sizeof(float));
