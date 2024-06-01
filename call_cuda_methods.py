@@ -20,7 +20,7 @@ print(f'cuda matrix addition: with time {time.time() - start_time} sec:\n', c)
 start_time = time.time()
 c = a + b
 
-print(f'python matrix addition: with time {time.time() - start_time} sec:\n', c)
+print(f'npy matrix addition: with time {time.time() - start_time} sec:\n', c)
 
 
 """Matrix Multiplication"""

@@ -3,8 +3,10 @@ import ctypes
 import os
 
 
-#for cublas methods (my pc doesn`t see this path in environment variables)
-os.add_dll_directory('C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.1/bin')
+#for cublas methods (my os doesn`t see this path in environment variables)
+DLL_PATH = 'C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.7/bin'
+
+os.add_dll_directory(DLL_PATH)
 
 def __get_cuda_addition():
     dll = ctypes.CDLL('./dependencies/mat_add.dll', mode = ctypes.RTLD_GLOBAL)
